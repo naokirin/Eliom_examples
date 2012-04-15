@@ -1,0 +1,17 @@
+This is Eliom sample programs.
+
+1. Install OCaml and Ocsigen bundle. (see http://ocsigen.org/install)
+2. Install OMake (e.g. Debian, aptitude install omake.)
+3. change directory (e.g. helloworld)
+4. omake init
+5. omake
+6. omake server
+
+
+If you don't install OMake, you can execute this program by following command.
+
+1. change directory (e.g. helloworld)
+2. mkdir db log data
+3. touch db/file
+4. ocamlfind ocamlc -thread -package eliom.server -c <.ml file>
+5. ocsigenserver -c <.conf file>
