@@ -7,8 +7,9 @@ This is Eliom sample programs.
 5. omake
 6. omake server
 
+and access to http://localhost:8080 .
 
-If you don't install OMake, you can execute this program by following command.
+If you don't install OMake, you execute this program by following command.
 
 1. change directory (e.g. helloworld)
 2. mkdir db log data
