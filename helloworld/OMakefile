@@ -1,4 +1,4 @@
-.PHONY: clean init
+.PHONY: clean init server
 
 USE_OCAMLFIND = true
 
@@ -20,6 +20,9 @@ LIB = helloworld
 init:
 	mkdir -p data log db
 	touch db/file
+
+server:
+	ocsigenserver -c helloworld.conf
 
 clean:
 	rm -f *~ *.cmi *.cmx *.cmo *.omc *.cma
