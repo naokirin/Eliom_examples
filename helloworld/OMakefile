@@ -1,0 +1,28 @@
+.PHONY: clean init
+
+USE_OCAMLFIND = true
+
+if $(not $(OCAMLFIND_EXISTS))
+   eprintln(This project requires ocamlfind, but is was not found.)
+   eprintln(You need to install ocamlfind and run "omake --configure".)
+   exit 1
+
+NATIVE_ENABLED = false
+BYTE_ENABLED = true
+
+OCAMLPACKS[] = eliom.server
+
+OCAMLCFLAGS += -thread
+
+FILES[] = helloworld
+LIB = helloworld
+
+init:
+	mkdir -p data log db
+	touch db/file
+
+clean:
+	rm -f *~ *.cmi *.cmx *.cmo *.omc *.cma
+
+.DEFAULT: $(OCamlLibrary $(LIB), $(FILES))
+
